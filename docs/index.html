@@ -17,8 +17,6 @@
         --text: #25211c;
         --muted: #6f675d;
         --rule: #ded6ca;
-        --badge-bg: #0c0c0d;
-        --badge-text: #ffffff;
         --focus: #2e6f73;
       }
 
@@ -28,8 +26,6 @@
           --text: #f1ece5;
           --muted: #b7aa9d;
           --rule: #3a352f;
-          --badge-bg: #f6f2ec;
-          --badge-text: #141210;
           --focus: #7cc9c9;
         }
       }
@@ -90,24 +86,10 @@
 
       .app-store-badge {
         display: inline-flex;
-        min-width: 178px;
-        height: 56px;
         align-items: center;
         justify-content: center;
-        gap: 10px;
-        border: 1px solid rgb(255 255 255 / 18%);
         border-radius: 8px;
-        background: var(--badge-bg);
-        color: var(--badge-text);
         text-decoration: none;
-        transition:
-          transform 160ms ease,
-          box-shadow 160ms ease;
-      }
-
-      .app-store-badge:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 14px 34px rgb(0 0 0 / 14%);
       }
 
       .app-store-badge:focus-visible,
@@ -116,28 +98,11 @@
         outline-offset: 4px;
       }
 
-      .apple-mark {
-        width: 24px;
-        height: 29px;
-        flex: 0 0 auto;
-        fill: currentColor;
-      }
-
-      .badge-copy {
-        display: grid;
-        gap: 1px;
-        text-align: left;
-      }
-
-      .badge-small {
-        font-size: 0.68rem;
-        line-height: 1;
-      }
-
-      .badge-large {
-        font-size: 1.24rem;
-        font-weight: 650;
-        line-height: 1;
+      .app-store-badge img {
+        display: block;
+        width: 180px;
+        max-width: 100%;
+        height: auto;
       }
 
       footer {
@@ -159,7 +124,6 @@
         }
 
         .app-store-badge {
-          width: 100%;
           max-width: 220px;
         }
       }
@@ -180,23 +144,24 @@
           Coffee brew-water recipes and water profiles, kept simple.
         </p>
 
-        <!--
-          Re-enable when BrewWater is live on the App Store.
-
-          <a
-            class="app-store-badge"
-            href="https://apps.apple.com/"
-            aria-label="Download BrewWater on the App Store"
-          >
-            <svg class="apple-mark" viewBox="0 0 24 29" aria-hidden="true">
-              <path d="M19.5 15.3c0-3.3 2.7-4.9 2.8-5-1.5-2.3-3.9-2.6-4.8-2.6-2-.2-3.9 1.2-5 1.2-1 0-2.6-1.2-4.3-1.1-2.2 0-4.3 1.3-5.4 3.3-2.3 4-.6 9.8 1.6 13 1.1 1.6 2.4 3.3 4.1 3.2 1.7-.1 2.3-1.1 4.3-1.1s2.6 1.1 4.4 1c1.8 0 2.9-1.6 4-3.2 1.3-1.8 1.8-3.6 1.8-3.7-.1 0-3.5-1.3-3.5-5Zm-3.3-9.7c.9-1.1 1.5-2.6 1.3-4.1-1.3.1-2.8.8-3.7 1.9-.8 1-1.6 2.6-1.4 4 1.5.1 2.9-.7 3.8-1.8Z"/>
-            </svg>
-            <span class="badge-copy">
-              <span class="badge-small">Download on the</span>
-              <span class="badge-large">App Store</span>
-            </span>
-          </a>
-        -->
+        <a
+          class="app-store-badge"
+          href="https://apps.apple.com/app/id6759792840"
+          aria-label="Download BrewWater on the App Store"
+        >
+          <picture>
+            <source
+              srcset="assets/app-store-badge-white.svg"
+              media="(prefers-color-scheme: dark)"
+            >
+            <img
+              src="assets/app-store-badge-black.svg"
+              width="120"
+              height="40"
+              alt="Download on the App Store"
+            >
+          </picture>
+        </a>
 
         <footer>
           <a class="privacy-link" href="privacy-policy/">Privacy Policy</a>
